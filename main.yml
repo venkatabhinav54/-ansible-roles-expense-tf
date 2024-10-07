@@ -1,0 +1,10 @@
+#we must pass 2 variables
+# component
+# environment
+- name: "configure {{ component }} server"
+  hosts: all
+  become: yes
+  var_files:
+  - "variables-{{ environment }}.yml"
+  roles:
+  - "{{ component }}"
